@@ -1,11 +1,8 @@
 import '~/styles/globals.css';
 import React from 'react';
 import { ThemeProvider } from '~/components/theme-provider';
-
 import { Inter } from 'next/font/google';
-
 import { TRPCReactProvider } from '~/trpc/react';
-//import AnnouncementBanner from '~/app/_components/announcement-banner';
 import Header from '~/app/_components/header';
 
 const inter = Inter({
@@ -29,7 +26,6 @@ export default function RootLayout({
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider>
           <ThemeProvider>
-            {/* <AnnouncementBanner /> */}
             <Header />
             {children}
           </ThemeProvider>
