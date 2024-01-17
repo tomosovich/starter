@@ -1,9 +1,9 @@
 import '~/styles/globals.css';
 import React from 'react';
-import { ThemeProvider } from '~/components/theme-provider';
 import { Inter } from 'next/font/google';
 import { TRPCReactProvider } from '~/trpc/react';
 import Header from '~/app/_components/header';
+import { Providers } from '~/lib/providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,14 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider>
-          <ThemeProvider>
+          <Providers>
             <Header />
             {children}
-          </ThemeProvider>
-          <script src='node_modules/preline/dist/preline.js'></script>
+
+            <script src='node_modules/preline/dist/preline.js'></script>
+          </Providers>
         </TRPCReactProvider>
       </body>
     </html>
