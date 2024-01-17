@@ -28,8 +28,6 @@ export default function RootLayout({
           <Providers>
             <Header />
             {children}
-
-            <script src='node_modules/preline/dist/preline.js'></script>
           </Providers>
         </TRPCReactProvider>
       </body>
